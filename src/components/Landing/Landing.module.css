@@ -1,0 +1,121 @@
+
+body {
+  height: 100vh; /* Ensure body takes full viewport height */
+  width: 100%;  /* Ensure body takes full viewport width */
+  background-image: url('./assets/barberBackground.jpg');
+  background-size: cover; /* Make the image cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+}
+.headerContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  
+}
+
+.sign{
+  
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 5rem;
+
+
+
+}
+.landingContainer {
+  height: 100vh; /* Make sure the body takes the full viewport height */
+  
+}
+.SignInLandingContainer{
+  display: none;
+}
+
+.companyMisionText {
+ padding: 1rem;
+ margin-top: 2rem;
+ margin-right: 2rem;
+ text-align: center;
+ color: #ffff;
+ font-weight: 900;
+ font-size: 1.8rem;
+ margin-bottom: 2rem;
+}
+
+.companySloganText{
+  padding: 1.7rem;
+  text-align: center;
+  color: #fff;
+  background-color: #212123;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.3rem;
+ }
+ .sloganContainer {
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+@media screen and (min-width: 600px)  {
+  /* Estilos aquí */
+  .headerContainer{
+  
+    flex-direction: row;
+    padding-top: 2rem;
+   
+  }
+  .sign{
+      width: 30%;
+    margin: 0;
+    justify-content: space-evenly;
+ 
+  }
+  .companytextMissionContainer{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .companyMain{
+    
+  /* width: 60%; */
+  height: 50vh;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+ 
+   
+    
+  }
+  .companyMain h1 { 
+    font-size: 2rem;
+    font-weight: 900;
+    margin-top: 2rem;
+    color: var(--call-to-action);
+    background-color: #ffffffd8;
+    
+    
+  }
+  .landingMainContainer{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .SignInLandingContainer{
+    display: block;
+    width: 100%;
+  }
+  .companyLogo p {
+    /* width: 60%; */
+    margin-left: auto;
+    padding: 3rem;
+    font-size: 1rem;
+  }
+
+}
