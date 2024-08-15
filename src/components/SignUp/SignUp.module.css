@@ -11,8 +11,8 @@
 
 .signUpContainer {
   background-color: #212123;
-  width: 80%;
-  height: 60vh;
+  width: 90%;
+  height: 90%;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -31,15 +31,22 @@
  
 }
 
+
 .singUpForm {
   
   
   display: flex;
   flex-direction: column;
-  
+ 
 
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .singUpInput{
+ 
   background-color: transparent;
   padding: 0.5rem;
   border: 0.2px solid #484849;
@@ -63,11 +70,16 @@
   color: #ffff;
 }
 
+.passWordContainer{
+  position: relative;
+}
+
+
 .passwordButton{
   
-    position: relative;
-    right: 20px;
-    top: 7px;
+    position: absolute;
+    right: 15px;
+    top: 24px;
     transform: translateY(-50%);
     border: none;
     background: none;
@@ -86,7 +98,8 @@
 
 @media screen and (min-width:600px){
   .signUpContainer{
-    width: 60%;
+    width: 70%;
+    height: 90%;
   }
   .signUpButton{
     display: flex;

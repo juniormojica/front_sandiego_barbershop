@@ -11,15 +11,24 @@ export default function SignUp() {
   const { showPassword, toogleShowPassword } = usePasswordVisibility()
   const [error, setError] = useState({
     emailError: '',
-    passwordError: ''
+    passwordError: '',
+    phoneError: '',
+    userNameError: '',
+    confirmPasswordError: ''
   })
   const [userInfo, setUserInfo] = useState({
     email: '',
-    password: ''
+    password: '',
+    phone: '',
+    userName: '',
+    confirmPassword: ''
   })
   const [touched, setTouched] = useState({
     email: false,
-    password: false
+    password: false,
+    phone: false,
+    userName: false,
+    confirmPassword: false
   })
 
 
@@ -31,7 +40,10 @@ export default function SignUp() {
       validateRegister(userInfo, setError, touched)
     }
 
+
   }, [userInfo, touched])
+
+
 
   const handleUserLogin = (event) => {
     const { name } = event.target
@@ -59,7 +71,8 @@ export default function SignUp() {
           <h3>Registrate</h3>
 
           <div className={s.singUpForm}>
-            <form action="">
+            <form action="" className={s.form}>
+              {/* input de email */}
               <div>
                 <input onChange={handleUserLogin}
                   className={s.singUpInput}
@@ -70,7 +83,29 @@ export default function SignUp() {
                 />
               </div>
               {error.emailError ? <p className={s.error}>{error.emailError}</p> : ''}
-
+              {/* input de Usuario */}
+              <div>
+                <input onChange={handleUserLogin}
+                  className={s.singUpInput}
+                  placeholder='Usuario'
+                  type="text"
+                  name='userName'
+                  value={userInfo.userName}
+                />
+              </div>
+              {error.userNameError ? <p className={s.error}>{error.userNameError}</p> : ''}
+              {/* input de Telefono */}
+              <div>
+                <input onChange={handleUserLogin}
+                  className={s.singUpInput}
+                  placeholder='Telefono'
+                  type="text"
+                  name='phone'
+                  value={userInfo.phone}
+                />
+              </div>
+              {error.phoneError ? <p className={s.error}>{error.phoneError}</p> : ''}
+              {/* input de constraseña */}
               <div className={s.passWordContainer}>
                 <input onChange={handleUserLogin}
                   name='password'
@@ -89,6 +124,26 @@ export default function SignUp() {
                 </button>
               </div>
               {error.passwordError ? <p className={s.error}>{error.passwordError}</p> : ''}
+
+              {/* input de confirmacion de constraseña */}
+              <div className={s.passWordContainer}>
+                <input onChange={handleUserLogin}
+                  name='confirmPassword'
+                  className={s.singUpInput}
+                  placeholder='Confirmar Contraseña'
+                  type={showPassword ? 'password' : 'text'}
+                  value={userInfo.confirmPassword}
+                />
+                <button
+                  type="button"
+                  onClick={toogleShowPassword}
+                  className={s.passwordButton}
+
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} className={s.iconButton} />
+                </button>
+              </div>
+              {error.confirmPasswordError ? <p className={s.error}>{error.confirmPasswordError}</p> : ''}
 
             </form>
 
