@@ -11,6 +11,24 @@
 
   
 }
+.signUp {
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  background-color: var(--call-to-action);
+  font-size: 1.1rem;
+  font-weight: 600;
+ margin-bottom:1rem ;
+}
+.signInRegister {
+  all: unset;
+  color: var(--call-to-action);
+  
+  background: transparent;
+
+} 
+
 
 .signContainerDefault {
   margin-left: 1rem;
@@ -46,6 +64,7 @@
   border-style: none;
 }
 
+
 .passwordContainer{ 
   position: relative;
 }
@@ -54,13 +73,14 @@
     background-color: #212123;
     color: #ffff;
   }
-  /* .marginSignIn {
 
-    margin-right: 5rem;
+  
+
+  .signUp:hover{
+    background-color: var(--button-hover);
+    cursor: pointer;
   }
   
-  .marginSignUp{
-    margin-right: 5rem; 
-  } */
+ 
   
 }

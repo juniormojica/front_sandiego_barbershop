@@ -4,7 +4,7 @@ import SignInButton from '../Buttons/SignInButton'
 import { useState, useEffect } from 'react'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { validatelogin } from '../../validations/singInValidation';
+import { validatelogin } from '../../validations/signInValidation';
 import usePasswordVisibility from '../../Hooks/usePasswordVisibility';
 export default function SignIn() {
 
