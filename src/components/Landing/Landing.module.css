@@ -63,10 +63,8 @@ body {
 @media screen and (min-width: 600px)  {
   /* Estilos aquí */
   .headerContainer{
-  
     flex-direction: row;
     padding-top: 2rem;
-   
   }
   .sign{
       width: 30%;
@@ -79,6 +77,8 @@ body {
     flex-direction: column;
     
   }
+
+
 
   .companyMain{
     
@@ -102,14 +102,17 @@ body {
   }
   .landingMainContainer{
     height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
   }
   
   .SignInLandingContainer{
-    display: block;
-    width: 100%;
+    
+    display: flex;
+    width: 50%;
+  
+    justify-content: center;
+    
+    
   }
   .companyLogo p {
     /* width: 60%; */

@@ -1,9 +1,13 @@
 import s from './CompanyLogo.module.css'
-export default function CompanyLogo({ margin }) {
+import { Link } from 'react-router-dom'
+export default function CompanyLogo({ margin, fontColor = '' }) {
   return (
-    <div className={s.logoContainer}>
-      <p className={`${s.logoText} ${s[margin]}`}>ControlBarberShop</p>
-    </div>
+    <Link to={'/'}>
+      <div className={s.logoContainer}>
+        <p className={`${s.logoText} ${s[margin]} ${s[fontColor]}`}>ControlBarberShop</p>
+      </div>
+    </Link>
+
 
   )
 }

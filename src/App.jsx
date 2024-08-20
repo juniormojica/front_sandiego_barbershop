@@ -4,6 +4,7 @@ import './App.css'
 import Landing from './components/Landing/Landing.jsx'
 import SignIn from './components/SignIn/SignIn.jsx';
 import SignUp from './components/SignUp/SingnUp.jsx';
+import DashBoard from './components/DashBoard/DashBoard.jsx';
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
 
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/dashboard' element={<DashBoard />} />
       </Routes>
     </Router>
 

@@ -27,7 +27,7 @@ export default function Landing() {
           </div>
 
           <div className={s.SignInLandingContainer}>
-            <SignIn />
+            <SignIn variant={'singInLanding'} />
           </div>
         </section>
 

@@ -74,7 +74,9 @@
     color: #ffff;
   }
 
-  
+  .singInLanding {
+    background-color: red;
+  }
 
   .signUp:hover{
     background-color: var(--button-hover);

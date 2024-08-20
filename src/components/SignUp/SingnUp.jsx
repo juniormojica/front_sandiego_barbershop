@@ -67,7 +67,7 @@ export default function SignUp() {
       < section className={s.signUpMainContainer} >
 
         <div className={s.signUpContainer}>
-          <CompanyLogo margin='marginNone' />
+          <CompanyLogo margin='marginNone' fontColor='fontColor' />
           <h3>Registrate</h3>
 
           <div className={s.singUpForm}>
