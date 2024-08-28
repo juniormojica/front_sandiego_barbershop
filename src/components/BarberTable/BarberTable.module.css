@@ -1,10 +1,48 @@
-/* .registerContainer {
-  background-color: red;
-} */
+.tableContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Agrega el desplazamiento horizontal */
+  overflow-x: hidden;
+}
 
-/* BarberTable.module.css */
-.registerContainer {
-  margin: 20px;
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.tableHeader {
+  background-color: #007bff;
+  color: white;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.tableCell {
+  padding: 8px;
+  border-bottom: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.tableStriped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.tableHover tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+tfoot {
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  border-top: 2px solid #dee2e6;
 }
 
 button {
@@ -23,4 +61,20 @@ button:first-of-type {
 button:last-of-type {
   background-color: #28a745;
   color: white;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .table {
+    font-size: 12px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+  }
+
+  .tableHeader, .tableCell {
+    padding: 6px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  button {
+    padding: 4px 8px; /* Ajusta el padding de los botones */
+    font-size: 12px; /* Reduce el tamaño de la fuente en los botones */
+  }
 }

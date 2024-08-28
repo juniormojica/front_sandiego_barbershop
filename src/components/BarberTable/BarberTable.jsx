@@ -1,6 +1,8 @@
 import { useReactTable, createColumnHelper, getCoreRowModel, flexRender } from '@tanstack/react-table'
 import services from '../../mockData.json'
 import s from './BarberTable.module.css'
+
+
 // Función para calcular los totales
 const calculateTotals = (data) => {
   return data.reduce((totals, row) => {
@@ -21,13 +23,17 @@ const calculateTotals = (data) => {
   }, { efectivo: 0, transferencia: 0 });
 }
 
-export default function BarberTable() {
+export default function BarberTable({barberName}) {
   const columnHelper = createColumnHelper();
 
   // Calcular los totales
   const totals = calculateTotals(services.data);
 
   const columns = [
+    columnHelper.accessor((row, index) => index + 1, {
+      header: '#',
+      id: 'index',
+    }),
     columnHelper.accessor(row => {
       const date = new Date(row.date);
       const time = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }); // Formato de 12 horas
@@ -35,10 +41,7 @@ export default function BarberTable() {
     }, {
       header: 'Hora',
     }),
-    columnHelper.accessor((row, index) => index + 1, {
-      header: '#',
-      id: 'index',
-    }),
+    
     columnHelper.accessor(row => {
       const efectivoPayment = row.payments.find(payment =>
         payment.methods.some(method => method.name === 'efectivo')
@@ -87,13 +90,14 @@ export default function BarberTable() {
   });
 
   return (
-    <div className={s.registerContainer}>
-      <table>
+    <div className={`${s.tableContainer}`}>
+      <h3>{barberName}</h3>
+      <table className={`${s.table} ${s.tableStriped} ${s.tableHover}`}>
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <th key={header.id}>
+                <th className={`${s.tableHeader}`}key={header.id}>
                   {header.column.columnDef.header}
                 </th>
               ))}
@@ -104,7 +108,7 @@ export default function BarberTable() {
           {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <td key={cell.id}>
+                <td className={`${s.tableCell}`} key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
@@ -112,17 +116,15 @@ export default function BarberTable() {
           ))}
         </tbody>
         <tfoot>
-          {table.getFooterGroups().map(footerGroup => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map(footer => (
-                <th key={footer.id}>
-                  {flexRender(footer.column.columnDef.footer)}
-                </th>
-              ))}
-            </tr>
-          ))}
+          <tr>
+            <td colSpan="2"><strong>Total Efectivo:</strong></td>
+            <td>0</td>
+            <td><strong>Total Transf:</strong> 20000</td>
+            <td></td>
+          </tr>
         </tfoot>
       </table>
     </div>
-  );
+  )
+
 }
