@@ -1,53 +1,61 @@
 {
-  "error": false,
-  "data": {
-    "idProvided": 2,
-    "date": "2024-08-09T23:17:44.907Z",
-    "total": 20000,
-    "Services": [
-      {
-        "serviceName": "Corte de Cabello",
-        "idService": 1,
-        "duration": 30,
-        "category": "Corte"
-      },
-      {
-        "serviceName": "Barba",
-        "idService": 2,
-        "duration": 20,
-        "category": "Barba"
-      }
-    ],
-    "client": {
-      "id": 6,
-      "name": "clientePrueba",
-      "phone": "423232323"
-    },
-    "barber": {
-      "id": 5,
-      "name": "miguel Orozco"
-    },
-    "payments": [
-      {
-        "idPayment": 1,
-        "amount": 15000,
-        "method": [
-          {
-            "id": 1,
-            "name": "nequi"
-          }
-        ]
-      },
-      {
-        "idPayment": 2,
-        "amount": 5000,
-        "method": [
-          {
-            "id": 2,
-            "name": "bancolombia"
-          }
-        ]
-      }
-    ]
-  }
+	"error": false,
+	"data": [
+		{
+			"idProvided": 2,
+			"date": "2024-08-09T23:17:44.907Z",
+			"total": 20000,
+			"Services": [
+				{
+					"serviceName": "Barba"
+				},
+				{
+					"serviceName": "Corte de Cabello"
+				}
+			],
+			"client": {
+				"id": 6,
+				"name": "clientePrueba",
+				"phone": "423232323"
+			},
+			"barber": {
+				"id": 5,
+				"name": "miguel Orozco"
+			},
+			"payments": [
+				{
+					"idPayment": 1,
+					"amount": 15000,
+					"methods": [
+						{
+							"id": 1,
+							"name": "nequi"
+						}
+					]
+				},
+				{
+					"idPayment": 2,
+					"amount": 5000,
+					"methods": [
+						{
+							"id": 2,
+							"name": "bancolombia"
+						}
+					]
+				}
+			]
+		},
+		{
+			"idProvided": 1,
+			"date": "2024-08-09T23:15:48.738Z",
+			"total": 15000,
+			"Services": [],
+			"client": null,
+			"barber": {
+				"id": 7,
+				"name": "Santiago Guerra"
+			},
+			"payments": []
+		}
+	]
 }
