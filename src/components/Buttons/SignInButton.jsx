@@ -5,7 +5,7 @@ export default function SignInButton({ variant = 'default' }) {
   return (
 
     <div className={s.marginSignIn}>
-      <Link to='/signIn'>
+      <Link to='/signin'>
         <button className={buttonClass}>
           Ingresar
         </button>
