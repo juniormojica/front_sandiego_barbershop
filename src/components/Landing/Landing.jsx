@@ -23,7 +23,7 @@ export default function Landing() {
         <section className={s.sloganContainer}>
           <div className={s.companytextMissionContainer}>
             <h1 className={s.companyMisionText}>Sistema de Gestión para Barberías</h1>
-            <p className={s.companySloganText}>Todo lo que Necesitas para Gestionartu Barbería en un Solo Lugar</p>
+            <p className={s.companySloganText}>Todo lo que Necesitas para Gestionar tu Barbería en un Solo Lugar</p>
           </div>
 
           <div className={s.SignInLandingContainer}>

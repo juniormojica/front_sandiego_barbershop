@@ -65,8 +65,8 @@ export default function BarberTable({barberName}) {
       header: 'Acciones',
       cell: ({ row }) => (
         <div className={s.actions}>
-          <button onClick={() => handleDetailClick(row.original)}>Detalle</button>
-          <button onClick={() => handleEditClick(row.original)}>Modificar</button>
+          <button className={s.detailButton}onClick={() => handleDetailClick(row.original)}>Detalle</button>
+          <button  className={s.modifyButton}onClick={() => handleEditClick(row.original)}>Modificar</button>
         </div>
       )
     })

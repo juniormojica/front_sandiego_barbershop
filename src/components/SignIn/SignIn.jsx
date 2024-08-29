@@ -6,9 +6,12 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { validatelogin } from '../../validations/signInValidation';
 import usePasswordVisibility from '../../Hooks/usePasswordVisibility';
+import { useLocation } from 'react-router-dom';
 export default function SignIn({ variant }) {
   const className = s[variant] || s.default
-
+  let location = useLocation()
+  console.log(location.pathname);
+  
   console.log(className);
 
   const { showPassword, toogleShowPassword } = usePasswordVisibility()
@@ -59,7 +62,8 @@ export default function SignIn({ variant }) {
     < section className={className} >
 
       <div className={s.signInContainer}>
-        <CompanyLogo margin='marginNone' fontColor='fontColor' />
+        {location.pathname === '/signin' ?  <CompanyLogo margin='marginNone' fontColor='fontColor' /> : ''} 
+       
         <h3>Bienvenido</h3>
 
         <div className={s.singInForm}>

@@ -14,12 +14,16 @@
   color: #fff;
 }
 
+.blue{
+  color: #213AD5;;
+}
+
 @media screen and (min-width:600px) {
   .logoText{
     font-size: 2rem;
     margin-top: 0px;
 
-    color: #FFFFFF;
+    color: #007bff
     
    }
   

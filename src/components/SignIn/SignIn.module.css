@@ -68,17 +68,19 @@
 
 .iconButton{
   color: #ffff;
+  background-color: transparent;
 }
 
 .passwordButton{
   
     position: relative;
-    right: 20px;
-    top: 7px;
+    right: 40px;
+    top: 17px;
     transform: translateY(-50%);
     border: none;
     background: none;
     cursor: pointer;
+   
   
 }
 
