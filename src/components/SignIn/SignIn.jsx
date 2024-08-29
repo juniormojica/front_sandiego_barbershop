@@ -7,10 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { validatelogin } from '../../validations/signInValidation';
 import usePasswordVisibility from '../../Hooks/usePasswordVisibility';
 import { useLocation } from 'react-router-dom';
-export default function SignIn({ variant }) {
+export default function SignIn({ variant ='default' }) {
   const className = s[variant] || s.default
   let location = useLocation()
-  console.log(location.pathname);
   
   console.log(className);
 

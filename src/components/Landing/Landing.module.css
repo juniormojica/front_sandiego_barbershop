@@ -1,12 +1,5 @@
 
-body {
-  height: 100vh; /* Ensure body takes full viewport height */
-  width: 100%;  /* Ensure body takes full viewport width */
-  background-image: url('./assets/barberBackground.jpg');
-  background-size: cover; /* Make the image cover the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repetition */
-}
+
 .headerContainer{
   display: flex;
   justify-content: space-between;
@@ -25,14 +18,13 @@ body {
 
 
 }
-.landingContainer {
-  height: 100vh; /* Make sure the body takes the full viewport height */
-  
-}
+
 .SignInLandingContainer{
   display: none;
 }
-
+.landingContainer {
+  height: 100vh;
+}
 .companyMisionText {
  padding: 1rem;
  margin-top: 2rem;
@@ -58,13 +50,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 59vh;
  }
 
 @media screen and (min-width: 600px)  {
   /* Estilos aquí */
   .headerContainer{
     flex-direction: row;
-    padding-top: 2rem;
   }
   .sign{
       width: 30%;
@@ -77,8 +69,6 @@ body {
     flex-direction: column;
     
   }
-
-
 
   .companyMain{
     
@@ -100,19 +90,20 @@ body {
     
     
   }
-  .landingMainContainer{
-    height: 70vh;
-    width: 100%;
-  }
+ 
   
   .SignInLandingContainer{
     
     display: flex;
     width: 50%;
-  
+
+    align-items: flex-start;
     justify-content: center;
     
     
+  }
+  .landingMainContainer{
+    height: 70vh;
   }
   .companyLogo p {
     /* width: 60%; */

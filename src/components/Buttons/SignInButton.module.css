@@ -44,23 +44,20 @@
   font-weight: 600;
   margin-top: 1rem;
   width: 100%;
+  margin-bottom: 2rem;
 
-}
-
-.signInBlue:hover {
-  background-color: var(--call-to-action-hover);
-  cursor:pointer ;
-  
-
-
-  border-style: none;
 }
 .default:hover {
   background-color: var(--call-to-action-hover);
   cursor:pointer ;
   transition: all 0.1s ease;
+  border-style: none;
+}
 
 
+.signInBlue:hover {
+  background-color: var(--call-to-action-hover);
+  cursor:pointer ;
   border-style: none;
 }
 
@@ -69,20 +66,21 @@
   position: relative;
 }
 @media screen and (min-width:600px) {
-  .signIn {
-    background-color: #212123;
-    color: #ffff;
-  }
 
-  .singInLanding {
-    background-color: red;
-  }
-
-  .signUp:hover{
-    background-color: var(--button-hover);
-    cursor: pointer;
-  }
+  .signInBlue{
+    color: #ffffff;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    background-color: var(--call-to-action);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
   
- 
-  
+  }
+  .signInBlue:hover {
+    background-color: #28a745;
+  }
 }

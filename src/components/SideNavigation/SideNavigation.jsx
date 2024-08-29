@@ -10,7 +10,7 @@ export default function SideNavigation() {
         </div>
  
       <ul className={`${s.listGroup}'list-group'  `}>
-        <div className={`d-flex align-items-center list-group-item-action ${s.elementHover}`}>
+        <div className={`d-flex align-items-center list-group-item-action p-2 ${s.elementHover}`}>
         <ion-icon name="bar-chart-outline" className='fs-2' ></ion-icon>
       
           <li className="list-group-item text-center p-2 ">
@@ -19,22 +19,22 @@ export default function SideNavigation() {
               to={"/dashboard"}
             >
               Main
-            </Link>{" "}
+            </Link>
           </li>
         </div>
 
-        <div className="d-flex align-items-center">
+        <div className={`d-flex align-items-center list-group-item-action p-2 ${s.elementHover}`}>
         <ion-icon name="happy-outline"></ion-icon>
           <li className="list-group-item text-center p-2 ">
             <Link
               className="list-group-item-action text-decoration-none"
-              to={"/dashboard"}
+              to={"/clients"}
             >
               Clients
             </Link>
           </li>
         </div>
-        <div className="d-flex align-items-center">
+        <div className={`d-flex align-items-center list-group-item-action p-2 ${s.elementHover}`}>
         <ion-icon name="man-outline"></ion-icon>
           <li className="list-group-item text-center p-2 ">
             <Link
@@ -45,7 +45,7 @@ export default function SideNavigation() {
             </Link>
           </li>
         </div>
-        <div className="d-flex align-items-center">
+        <div className={`d-flex align-items-center list-group-item-action  p-2 ${s.elementHover}`}>
         <ion-icon name="cube-outline"></ion-icon>
           <li className="list-group-item text-center p-2 ">
             <Link
@@ -56,7 +56,7 @@ export default function SideNavigation() {
             </Link>
           </li>
         </div>
-        <div className="d-flex align-items-center">
+        <div className={`d-flex align-items-center list-group-item-action p-2 ${s.elementHover}`}>
         <ion-icon name="settings-outline"></ion-icon>
           <li className="list-group-item text-center p-2 ">
             <Link

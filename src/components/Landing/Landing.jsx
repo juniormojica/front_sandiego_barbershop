@@ -5,15 +5,15 @@ import SignIn from "../SignIn/SignIn"
 import s from './Landing.module.css'
 export default function Landing() {
   return (
-    <section className={s.landingContainer}>
+    <section className={`${s.landingContainer} container`}>
       <header className={s.headerContainer}>
         <div>
           <CompanyLogo />
         </div>
 
         <div className={s.sign}>
-          <SignUpButton />
-          <SignInButton />
+          <SignUpButton variant="signInBlue" />
+          <SignInButton  variant="signInBlue"/>
 
         </div>
 

@@ -7,6 +7,7 @@ import Landing from './components/Landing/Landing.jsx'
 import SignIn from './components/SignIn/SignIn.jsx';
 import SignUp from './components/SignUp/SingnUp.jsx';
 import DashBoard from './components/DashBoard/DashBoard.jsx';
+import Client from './components/Clients/Client.jsx';
 function App() {
 
   return (
@@ -14,11 +15,14 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<div className='container'><Landing /></div>} />
+          element={<div><Landing /></div>} />
 
-        <Route path='/signin' element={<SignIn />} />
+        <Route path='/signin' element={<SignIn variant='mainVariant' />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/dashboard' element={<DashBoard />} />
+        <Route path='/clients' element={<>
+          <Client />
+        </> } />
       </Routes>
     </Router>
 

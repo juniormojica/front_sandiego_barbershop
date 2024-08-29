@@ -11,6 +11,7 @@
     margin-bottom: 0;
 }
 .elementHover:hover{
-    background-color: red;
+    background-color: #007bff;
+    border-radius: 5px;
 }
 /* estilos de iconos */

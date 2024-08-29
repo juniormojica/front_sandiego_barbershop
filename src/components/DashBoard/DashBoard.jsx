@@ -17,7 +17,7 @@ export default function DashBoard() {
         </div>
         <div className={s.barberTableContainer}>
         <BarberTable barberName ='Adrian'/>
-        <BarberTable barberName ='Santigo'/>
+        <BarberTable barberName ='Santiago'/>
         <BarberTable barberName ='Miguel'/>
         </div>
        
