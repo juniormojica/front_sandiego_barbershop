@@ -1,6 +1,17 @@
   .registerMainContainer{
+   display: flex;
+   justify-content: space-around;
+  }
+  .barberTableContainer{
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr  ;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebarMainContainer{
+    width: 20vw;
+    height: 100hv;
+   
   }
 
   @media (max-width: 900px) {
