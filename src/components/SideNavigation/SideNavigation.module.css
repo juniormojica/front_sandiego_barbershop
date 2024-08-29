@@ -1,0 +1,16 @@
+.sideContainer{
+    
+    
+}
+.itemContainer{
+    padding: 1rem;
+}
+
+
+.textDashboard{
+    margin-bottom: 0;
+}
+.elementHover:hover{
+    background-color: red;
+}
+/* estilos de iconos */
