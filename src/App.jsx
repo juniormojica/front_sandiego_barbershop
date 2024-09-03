@@ -8,6 +8,7 @@ import SignIn from './components/SignIn/SignIn.jsx';
 import SignUp from './components/SignUp/SingnUp.jsx';
 import DashBoard from './components/DashBoard/DashBoard.jsx';
 import Client from './components/Clients/Client.jsx';
+import Barbers from './components/Barbers/Barbers.jsx';
 function App() {
 
   return (
@@ -22,6 +23,10 @@ function App() {
         <Route path='/dashboard' element={<DashBoard />} />
         <Route path='/clients' element={<>
           <Client />
+        </> } />
+
+        <Route path='/barbers' element={<>
+          <Barbers />
         </> } />
       </Routes>
     </Router>
