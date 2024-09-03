@@ -1,9 +1,23 @@
+ion-icon[name="apps-outline"]{
+ 
+  font-size: 1.75rem;}
+
+  ion-icon[name="apps-outline"]:hover{
+    background-color: #213AD5;
+    font-size: 1.95rem;
+    cursor: pointer;
+    border: none;
+  }
 .sideContainer{
-    
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .itemContainer{
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
 }
 
 
@@ -15,3 +29,13 @@
     border-radius: 5px;
 }
 /* estilos de iconos */
+
+
+  
+@media (min-width: 768px) { /* Medium devices */
+   
+  }
+  
+@media (min-width: 992px) { /* Large devices */
+    
+  }
