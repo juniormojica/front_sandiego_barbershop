@@ -1,17 +1,17 @@
 import s from './SignIn.module.css'
-import CompanyLogo from "../Company/CompanyLogo"
+import CompanyLogo from '../Company/CompanyLogo'
 import SignInButton from '../Buttons/SignInButton'
 import { useState, useEffect } from 'react'
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { validatelogin } from '../../validations/signInValidation';
-import usePasswordVisibility from '../../Hooks/usePasswordVisibility';
-import { useLocation } from 'react-router-dom';
-export default function SignIn({ variant ='default' }) {
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { validatelogin } from '../../validations/signInValidation'
+import usePasswordVisibility from '../../Hooks/usePasswordVisibility'
+import { useLocation } from 'react-router-dom'
+export default function SignIn ({ variant = 'default' }) {
   const className = s[variant] || s.default
-  let location = useLocation()
-  
-  console.log(className);
+  const location = useLocation()
+
+  console.log(className)
 
   const { showPassword, toogleShowPassword } = usePasswordVisibility()
   const [error, setError] = useState({
@@ -27,15 +27,10 @@ export default function SignIn({ variant ='default' }) {
     password: false
   })
 
-
-
-
-
   useEffect(() => {
     if (touched) {
       validatelogin(userInfo, setError, touched)
     }
-
   }, [userInfo, touched])
 
   const handleUserLogin = (event) => {
@@ -51,27 +46,25 @@ export default function SignIn({ variant ='default' }) {
       ...touched,
       [name]: true
     })
-
   }
-
-
 
   return (
 
-    < section className={className} >
+    <section className={className}>
 
       <div className={s.signInContainer}>
-        {location.pathname === '/signin' ?  <CompanyLogo margin='marginNone' fontColor='fontColor' /> : ''} 
-       
+        {location.pathname === '/signin' ? <CompanyLogo margin='marginNone' fontColor='fontColor' /> : ''}
+
         <h3>Bienvenido</h3>
 
         <div className={s.singInForm}>
-          <form action="">
+          <form action=''>
             <div>
-              <input onChange={handleUserLogin}
+              <input
+                onChange={handleUserLogin}
                 className={s.singInInput}
                 placeholder='Email'
-                type="text"
+                type='text'
                 name='email'
                 value={userInfo.email}
               />
@@ -79,7 +72,8 @@ export default function SignIn({ variant ='default' }) {
             {error.emailError ? <p className={s.error}>{error.emailError}</p> : ''}
 
             <div className={s.passWordContainer}>
-              <input onChange={handleUserLogin}
+              <input
+                onChange={handleUserLogin}
                 name='password'
                 className={s.singInInput}
                 placeholder='Contraseña'
@@ -87,7 +81,7 @@ export default function SignIn({ variant ='default' }) {
                 value={userInfo.password}
               />
               <button
-                type="button"
+                type='button'
                 onClick={toogleShowPassword}
                 className={s.passwordButton}
 
@@ -100,7 +94,7 @@ export default function SignIn({ variant ='default' }) {
           </form>
           <div className={s.forgetContainer}>
             <p>olvidaste la contraseña?</p>
-          </div >
+          </div>
           <div className={s.signInButton}>
             <SignInButton variant='signInBlue' />
           </div>
@@ -108,7 +102,6 @@ export default function SignIn({ variant ='default' }) {
         </div>
       </div>
 
-
-    </section >
+    </section>
   )
 }

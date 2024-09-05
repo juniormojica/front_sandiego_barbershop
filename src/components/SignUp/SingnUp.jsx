@@ -2,12 +2,12 @@ import s from './SignUp.module.css'
 import CompanyLogo from '../Company/CompanyLogo'
 import { useEffect, useState } from 'react'
 import usePasswordVisibility from '../../Hooks/usePasswordVisibility'
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import SignUpButton from '../Buttons/SingUpButton';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import SignUpButton from '../Buttons/SingUpButton'
 import { validateRegister } from '../../validations/signUpValidation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import SignInButton from '../Buttons/SignInButton'
-export default function SignUp() {
+export default function SignUp () {
   const { showPassword, toogleShowPassword } = usePasswordVisibility()
   const [error, setError] = useState({
     emailError: '',
@@ -31,19 +31,11 @@ export default function SignUp() {
     confirmPassword: false
   })
 
-
-
-
-
   useEffect(() => {
     if (touched) {
       validateRegister(userInfo, setError, touched)
     }
-
-
   }, [userInfo, touched])
-
-
 
   const handleUserLogin = (event) => {
     const { name } = event.target
@@ -58,26 +50,25 @@ export default function SignUp() {
       ...touched,
       [name]: true
     })
-
   }
-
 
   return (
     <section>
-      < section className={s.signUpMainContainer} >
+      <section className={s.signUpMainContainer}>
 
         <div className={s.signUpContainer}>
           <CompanyLogo margin='marginNone' fontColor='fontColor' />
           <h3>Registrate</h3>
 
           <div className={s.singUpForm}>
-            <form action="" className={s.form}>
+            <form action='' className={s.form}>
               {/* input de email */}
               <div>
-                <input onChange={handleUserLogin}
+                <input
+                  onChange={handleUserLogin}
                   className={s.singUpInput}
                   placeholder='Email'
-                  type="text"
+                  type='text'
                   name='email'
                   value={userInfo.email}
                 />
@@ -85,10 +76,11 @@ export default function SignUp() {
               {error.emailError ? <p className={s.error}>{error.emailError}</p> : ''}
               {/* input de Usuario */}
               <div>
-                <input onChange={handleUserLogin}
+                <input
+                  onChange={handleUserLogin}
                   className={s.singUpInput}
                   placeholder='Usuario'
-                  type="text"
+                  type='text'
                   name='userName'
                   value={userInfo.userName}
                 />
@@ -96,10 +88,11 @@ export default function SignUp() {
               {error.userNameError ? <p className={s.error}>{error.userNameError}</p> : ''}
               {/* input de Telefono */}
               <div>
-                <input onChange={handleUserLogin}
+                <input
+                  onChange={handleUserLogin}
                   className={s.singUpInput}
                   placeholder='Telefono'
-                  type="text"
+                  type='text'
                   name='phone'
                   value={userInfo.phone}
                 />
@@ -107,7 +100,8 @@ export default function SignUp() {
               {error.phoneError ? <p className={s.error}>{error.phoneError}</p> : ''}
               {/* input de constraseña */}
               <div className={s.passWordContainer}>
-                <input onChange={handleUserLogin}
+                <input
+                  onChange={handleUserLogin}
                   name='password'
                   className={s.singUpInput}
                   placeholder='Contraseña'
@@ -115,7 +109,7 @@ export default function SignUp() {
                   value={userInfo.password}
                 />
                 <button
-                  type="button"
+                  type='button'
                   onClick={toogleShowPassword}
                   className={s.passwordButton}
 
@@ -127,7 +121,8 @@ export default function SignUp() {
 
               {/* input de confirmacion de constraseña */}
               <div className={s.passWordContainer}>
-                <input onChange={handleUserLogin}
+                <input
+                  onChange={handleUserLogin}
                   name='confirmPassword'
                   className={s.singUpInput}
                   placeholder='Confirmar Contraseña'
@@ -135,7 +130,7 @@ export default function SignUp() {
                   value={userInfo.confirmPassword}
                 />
                 <button
-                  type="button"
+                  type='button'
                   onClick={toogleShowPassword}
                   className={s.passwordButton}
 
@@ -154,13 +149,12 @@ export default function SignUp() {
           </div>
           <div className={s.alreadyContainer}>
             <p>Tienes una cuenta?</p>
-          </div >
+          </div>
 
           <SignInButton variant='signInRegister' />
         </div>
 
-
-      </section >
+      </section>
     </section>
   )
 }

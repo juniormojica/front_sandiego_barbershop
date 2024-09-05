@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import s from './SignInButton.module.css'
-export default function SignUpButton({ variant = 'default' }) {
+export default function SignUpButton ({ variant = 'default' }) {
   const buttonClass = s[variant] || s.default
 
   return (
@@ -12,8 +12,6 @@ export default function SignUpButton({ variant = 'default' }) {
       </Link>
 
     </div>
-
-
 
   )
 }

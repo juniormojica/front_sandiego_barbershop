@@ -1,9 +1,9 @@
-import SignInButton from "../Buttons/SignInButton"
-import SignUpButton from "../Buttons/SingUpButton"
-import CompanyLogo from "../Company/CompanyLogo"
-import SignIn from "../SignIn/SignIn"
+import SignInButton from '../Buttons/SignInButton'
+import SignUpButton from '../Buttons/SingUpButton'
+import CompanyLogo from '../Company/CompanyLogo'
+import SignIn from '../SignIn/SignIn'
 import s from './Landing.module.css'
-export default function Landing() {
+export default function Landing () {
   return (
     <section className={`${s.landingContainer} container`}>
       <header className={s.headerContainer}>
@@ -12,11 +12,10 @@ export default function Landing() {
         </div>
 
         <div className={s.sign}>
-          <SignUpButton variant="signInBlue" />
-          <SignInButton  variant="signInBlue"/>
+          <SignUpButton variant='signInBlue' />
+          <SignInButton variant='signInBlue' />
 
         </div>
-
 
       </header>
       <div className={s.landingMainContainer}>
@@ -27,13 +26,12 @@ export default function Landing() {
           </div>
 
           <div className={s.SignInLandingContainer}>
-            <SignIn variant={'singInLanding'} />
+            <SignIn variant='singInLanding' />
           </div>
         </section>
 
-
       </div>
 
-    </section>)
-
+    </section>
+  )
 }
