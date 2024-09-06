@@ -2,26 +2,33 @@ import s from './Client.module.css'
 import SideNavigation from '../SideNavigation/SideNavigation'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { setClients } from '../../features/clients/clientsSlice'
+import { fetchClients } from '../../features/clients/clientsSlice'
 import ClientItem from './ClientItem'
 import SearchBar from '../searchBar/SearchBar'
-import axios from 'axios'
+import Error from '../Error/Error'
+import Loading from '../Loading/Loading'
+
 export default function Client() {
 
   const dispatch = useDispatch()
 
-  const fetchClients = async () => {
-    const response = await axios.get('http://localhost:3000/clients')
-    const data = response.data.data
-    dispatch(setClients(data))
-    console.log(data);
-  }
+  const { data: clients, status, error } = useSelector(state => state.clients)
+
 
   useEffect(() => {
-    fetchClients()
-  }, [dispatch])
+    if (status === 'idle') {
+      dispatch(fetchClients());
+    }
+  }, [dispatch, status])
 
-  const clients = useSelector(state => { return state.clients })
+  if (status === 'loading') {
+    return <Loading />
+  }
+
+  if (status === 'failed') {
+    return <Error message={error} />
+  }
+
   return (
     <>
       <div className={`d-flex  flex-column  w-100 justify-center ${s.clientsMainContainer}`}>
@@ -44,11 +51,9 @@ export default function Client() {
             <div className={`${s.findedClientContainer} `}>
               <ul className={`d-flex flex-column ${s.findedClientsList}`}>
 
-                {(clients.length === 0)
-                  ? (<h3>No hay Clientes para mostrar</h3>)
-                  : (
-                    clients.map(client => <ClientItem key={client.idClient} name={client.name} />)
-                  )}
+
+                {clients.map(client => <ClientItem key={client.idClient} name={client.name} />)}
+
 
               </ul>
             </div>
