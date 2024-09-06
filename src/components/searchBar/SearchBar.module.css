@@ -1,0 +1,28 @@
+.clientMainContainer{
+    display: flex;
+}
+.searchButton {
+    display: flex;
+  align-items: flex-start;
+    background-color: transparent;
+    width: 10%;
+    
+}
+.searchInput{
+
+    max-width: 60%;
+}
+
+
+
+ion-icon[name=search-outline]{
+    background-color: transparent;
+    font-size : 1.5rem;
+    
+}
+
+ion-icon[name=search-outline]:hover{
+ color: #213AD5;
+  font-size : 1.7rem;
+  
+}
