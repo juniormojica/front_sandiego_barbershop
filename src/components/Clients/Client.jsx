@@ -1,19 +1,25 @@
 import s from './Client.module.css'
 import SideNavigation from '../SideNavigation/SideNavigation'
 import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { fetchClients } from '../../features/clients/clientsSlice'
 import ClientItem from './ClientItem'
 import SearchBar from '../searchBar/SearchBar'
 import Error from '../Error/Error'
 import Loading from '../Loading/Loading'
+import CreateClientModal from './CreateClientModal'
 
 export default function Client() {
 
+  const [showModal, setShowModal] = useState(false)
   const dispatch = useDispatch()
 
   const { data: clients, status, error } = useSelector(state => state.clients)
 
+  const ToogleShowModal = () => {
+    setShowModal(!modal)
+  }
 
   useEffect(() => {
     if (status === 'idle') {
@@ -31,9 +37,12 @@ export default function Client() {
 
   return (
     <>
-      <div className={`d-flex  flex-column  w-100 justify-center ${s.clientsMainContainer}`}>
+      <div className={`d-flex    w-100 flex-md-row justify-center ${s.clientsMainContainer}`}>
         <div>
           <h3 className='m-4'>Clients</h3>
+        </div>
+        <div>
+          <CreateClientModal />
         </div>
       </div>
       <section className={`container ${s.clientMainContainer} d-flex flex-column flex-md-row`}>

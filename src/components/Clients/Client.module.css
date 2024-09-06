@@ -1,6 +1,11 @@
 .clientMainContainer{
   display: flex;
 }
+
+.clientsMainContainer{
+  align-items: center;
+  justify-content: space-around;
+}
 /* .findedClientsMainContainer{
  margin-left: 2rem;
 } */
@@ -33,6 +38,10 @@
     }
     .mainSideContainer{
         background-color: red;
+    }
+    .clientsMainContainer{
+      justify-content: space-around;
+      align-items: center;
     }
     
      
