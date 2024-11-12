@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 const Error = ({ message }) => {
     return (
         <div style={styles.container}>
             <p style={styles.errorText}>Error: {message}</p>
         </div>
-    );
-};
+    )
+}
 
 const styles = {
     container: {
@@ -20,6 +20,6 @@ const styles = {
     errorText: {
         fontWeight: 'bold',
     },
-};
+}
 
-export default Error;
+export default Error

@@ -1,24 +1,23 @@
-.signUpMainContainer{
-  /* background-color:#ffffff ; */
-  height: 100vh;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  color: #ffff;
- 
+.signUpMainContainer {
+    /* background-color:#ffffff ; */
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
 }
 
 .signUpContainer {
-  background-color: #212123;
-  width: 90%;
-  height: 90%;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  max-width: 600px;
+    background-color: #212123;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
 }
 /* .span{
   display: block;
@@ -26,57 +25,46 @@
 } */
 
 .signUpContainer h3 {
-  text-align: center;
-  padding: 1rem;
- 
+    text-align: center;
+    padding: 1rem;
 }
-
 
 .singUpForm {
-  
-  
-  display: flex;
-  flex-direction: column;
- 
-
+    display: flex;
+    flex-direction: column;
 }
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.singUpInput{
- 
-  background-color: transparent;
-  padding: 0.5rem;
-  border: 0.2px solid #484849;
-  color: #ffff;
+.singUpInput {
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 0.2px solid #484849;
+    color: #ffff;
 }
 .singUpForm form input:nth-of-type(1) {
-  
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .singUpForm form > div:last-of-type input {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .alreadyContainer p {
-  color: #ffffff;
+    color: #ffffff;
 }
 
-
-.iconButton{
-  color: #ffff;
+.iconButton {
+    color: #ffff;
 }
 
-.passWordContainer{
-  position: relative;
+.passWordContainer {
+    position: relative;
 }
 
-
-.passwordButton{
-  
+.passwordButton {
     position: absolute;
     right: 15px;
     top: 24px;
@@ -84,25 +72,23 @@
     border: none;
     background: none;
     cursor: pointer;
-  
 }
 
-.error{
-  color: #f04452;
+.error {
+    color: #f04452;
 }
-.signUpButton{
-  display: flex;
-  justify-content: center;
-} 
-
-
-@media screen and (min-width:600px){
-  .signUpContainer{
-    width: 70%;
-    height: 90%;
-  }
-  .signUpButton{
+.signUpButton {
     display: flex;
     justify-content: center;
-  }
+}
+
+@media screen and (min-width: 600px) {
+    .signUpContainer {
+        width: 70%;
+        height: 90%;
+    }
+    .signUpButton {
+        display: flex;
+        justify-content: center;
+    }
 }

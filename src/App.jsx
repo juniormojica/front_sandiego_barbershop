@@ -8,33 +8,45 @@ import SignUp from './components/SignUp/SingnUp.jsx'
 import DashBoard from './components/DashBoard/DashBoard.jsx'
 import Client from './components/Clients/Client.jsx'
 import Barbers from './components/Barbers/Barbers.jsx'
-function App () {
-  return (
-    <Router>
-      <Routes>
-        <Route
-          path='/'
-          element={<div><Landing /></div>}
-        />
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <div>
+                            <Landing />
+                        </div>
+                    }
+                />
 
-        <Route path='/signin' element={<SignIn variant='mainVariant' />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='/dashboard' element={<DashBoard />} />
-        <Route
-          path='/clients' element={<>
-            <Client />
-          </>}
-        />
+                <Route
+                    path="/signin"
+                    element={<SignIn variant="mainVariant" />}
+                />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/dashboard" element={<DashBoard />} />
+                <Route
+                    path="/clients"
+                    element={
+                        <>
+                            <Client />
+                        </>
+                    }
+                />
 
-        <Route
-          path='/barbers' element={<>
-            <Barbers />
-          </>}
-        />
-      </Routes>
-    </Router>
-
-  )
+                <Route
+                    path="/barbers"
+                    element={
+                        <>
+                            <Barbers />
+                        </>
+                    }
+                />
+            </Routes>
+        </Router>
+    )
 }
 
 export default App

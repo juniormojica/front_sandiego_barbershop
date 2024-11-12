@@ -1,9 +1,19 @@
 .detailButton {
     background-color: #007bff;
     color: white;
-  }
-  
-  .deleteButton{
+}
+
+.detailButton:hover {
+    background-color: #0b5ed7;
+    color: white;
+}
+
+.deleteButton {
     background-color: #ff0000;
     color: white;
-  }
+}
+
+.deleteButton:hover {
+    background-color: #eb0909;
+    color: white;
+}

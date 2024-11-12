@@ -1,54 +1,99 @@
-import { useState } from "react";
-import { validateClient } from "../../utils/validateClient";
+import { useState } from 'react'
+import { validateClient } from '../../utils/validateClient'
+import { createClient } from '../../features/clients/clientsSlice'
+import { useDispatch } from 'react-redux'
+import { X, Save } from 'lucide-react'
+import s from './CreateClientModal.module.css'
+import Swal from 'sweetalert2' // Importar SweetAlert2
+
 export default function CreateClientModal() {
     const [client, setClient] = useState({
-        name: "",
-        email: "",
-        phone: ""
-    });
+        name: '',
+        email: '',
+        phone: '',
+    })
 
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({})
+    const [isModalOpen, setIsModalOpen] = useState(false) // Estado para controlar el modal
+    const dispatch = useDispatch()
 
     const handleClientInfo = (event) => {
-        const property = event.target.name;
-        const value = event.target.value;
+        const property = event.target.name
+        const value = event.target.value
 
         setClient({
             ...client,
-            [property]: value
-        });
-    };
-
-
+            [property]: value,
+        })
+    }
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         if (validateClient(client, setErrors)) {
-            // Handle successful validation
-            console.log("Datos del cliente válidos", client);
-            // Here you can proceed with further actions like sending data to an API
+            console.log('Datos del cliente válidos', client)
+            dispatch(createClient(client))
+                .unwrap()
+                .then(() => {
+                    console.log('Cliente guardado exitosamente')
+                    setClient({
+                        name: '',
+                        email: '',
+                        phone: '',
+                    })
+                    Swal.fire({
+                        title: '¡Cliente creado!',
+                        text: 'El cliente se ha creado exitosamente.',
+                        icon: 'success',
+                        confirmButtonText: 'Ok',
+                    })
+                    setIsModalOpen(false) // Cerrar el modal después de guardar
+                })
+                .catch((error) => {
+                    console.log('Error al guardar el cliente', error)
+                })
         } else {
-            console.log("Datos del cliente inválidos", errors);
+            console.log('Datos del cliente inválidos', errors)
+            Swal.fire({
+                title: 'Datos inválidos',
+                text: 'Por favor revisa los campos y corrige los errores.',
+                icon: 'warning',
+                confirmButtonText: 'Ok',
+            })
         }
-    };
+    }
+
+    // Función para cerrar el modal al hacer clic fuera del contenido
+    const closeModalOnBackdropClick = (event) => {
+        if (event.target.classList.contains(s.modalBackdrop)) {
+            setIsModalOpen(false)
+        }
+    }
 
     return (
         <>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Crear Cliente
-            </button>
+            {/* Botón para abrir el modal */}
+            <button onClick={() => setIsModalOpen(true)}>Crear Cliente</button>
 
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Nuevo Cliente</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                        </div>
-                        <div className="modal-body">
+            {/* Mostrar el modal solo si isModalOpen es true */}
+            {isModalOpen && (
+                <>
+                    {/* Fondo oscuro del modal */}
+                    <div
+                        className={s.modalBackdrop}
+                        onClick={closeModalOnBackdropClick}
+                    />
+
+                    {/* Contenido del modal */}
+                    <div className={s.modalMain}>
+                        <button onClick={() => setIsModalOpen(false)}>
+                            <X />
+                        </button>
+                        <div>
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
-                                    <label htmlFor="clientName" className="form-label">Nombre</label>
+                                    <label htmlFor="clientName" className="form-label">
+                                        Nombre
+                                    </label>
                                     <input
                                         onChange={handleClientInfo}
                                         name="name"
@@ -57,10 +102,14 @@ export default function CreateClientModal() {
                                         id="clientName"
                                         placeholder="Junior Mojica"
                                     />
-                                    {errors.name && <div className="text-danger">{errors.name}</div>}
+                                    {errors.name && (
+                                        <div className="text-danger">{errors.name}</div>
+                                    )}
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="clientEmail" className="form-label">Correo Electrónico</label>
+                                    <label htmlFor="clientEmail" className="form-label">
+                                        Correo Electrónico
+                                    </label>
                                     <input
                                         onChange={handleClientInfo}
                                         type="email"
@@ -69,10 +118,14 @@ export default function CreateClientModal() {
                                         id="clientEmail"
                                         placeholder="juniormojica26@gmail.com"
                                     />
-                                    {errors.email && <div className="text-danger">{errors.email}</div>}
+                                    {errors.email && (
+                                        <div className="text-danger">{errors.email}</div>
+                                    )}
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="clientPhone" className="form-label">Teléfono</label>
+                                    <label htmlFor="clientPhone" className="form-label">
+                                        Teléfono
+                                    </label>
                                     <input
                                         onChange={handleClientInfo}
                                         name="phone"
@@ -81,17 +134,20 @@ export default function CreateClientModal() {
                                         id="clientPhone"
                                         placeholder="3218710632"
                                     />
-                                    {errors.phone && <div className="text-danger">{errors.phone}</div>}
+                                    {errors.phone && (
+                                        <div className="text-danger">{errors.phone}</div>
+                                    )}
                                 </div>
-                                <button type="submit" className="btn btn-primary">Guardar cambios</button>
+                                <div>
+                                    <button className="btn btn-primary">
+                                        <Save /> Guardar Cliente
+                                    </button>
+                                </div>
                             </form>
                         </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
                     </div>
-                </div>
-            </div>
+                </>
+            )}
         </>
-    );
+    )
 }

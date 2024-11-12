@@ -1,73 +1,35 @@
-.default{
-  color: #ffff;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
-  border-style: none;
-  background-color: var(--main-bg-color);
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  
-
-  
+.default {
+    color: #ffff;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    background-color: var(--main-bg-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 .signUp {
-  color: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
-  border-style: none;
-  background-color: var(--call-to-action);
-  font-size: 1.1rem;
-  font-weight: 600;
- margin-bottom:1rem ;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    background-color: var(--call-to-action);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 .signInRegister {
-  all: unset;
-  color: var(--call-to-action);
-  
-  background: transparent;
+    all: unset;
+    color: var(--call-to-action);
 
-} 
-
+    background: transparent;
+}
 
 .signContainerDefault {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 
-.signInBlue{
-  color: #ffffff;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
-  border-style: none;
-  background-color: var(--call-to-action);
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  width: 100%;
-  margin-bottom: 2rem;
-
-}
-.default:hover {
-  background-color: var(--call-to-action-hover);
-  cursor:pointer ;
-  transition: all 0.1s ease;
-  border-style: none;
-}
-
-
-.signInBlue:hover {
-  background-color: var(--call-to-action-hover);
-  cursor:pointer ;
-  border-style: none;
-}
-
-
-.passwordContainer{ 
-  position: relative;
-}
-@media screen and (min-width:600px) {
-
-  .signInBlue{
+.signInBlue {
     color: #ffffff;
     padding: 0.5rem 2rem;
     border-radius: 0.5rem;
@@ -78,9 +40,37 @@
     margin-top: 1rem;
     width: 100%;
     margin-bottom: 2rem;
-  
-  }
-  .signInBlue:hover {
-    background-color: #28a745;
-  }
+}
+.default:hover {
+    background-color: var(--call-to-action-hover);
+    cursor: pointer;
+    transition: all 0.1s ease;
+    border-style: none;
+}
+
+.signInBlue:hover {
+    background-color: var(--call-to-action-hover);
+    cursor: pointer;
+    border-style: none;
+}
+
+.passwordContainer {
+    position: relative;
+}
+@media screen and (min-width: 600px) {
+    .signInBlue {
+        color: #ffffff;
+        padding: 0.5rem 2rem;
+        border-radius: 0.5rem;
+        border-style: none;
+        background-color: var(--call-to-action);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .signInBlue:hover {
+        background-color: #28a745;
+    }
 }

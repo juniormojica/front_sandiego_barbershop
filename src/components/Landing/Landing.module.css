@@ -1,115 +1,94 @@
-
-
-.headerContainer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column-reverse;
-  
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
-.sign{
-  
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-bottom: 5rem;
-
-
-
+.sign {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 5rem;
 }
 
-.SignInLandingContainer{
-  display: none;
+.SignInLandingContainer {
+    display: none;
 }
 .landingContainer {
-  height: 100vh;
+    height: 100vh;
 }
 .companyMisionText {
- padding: 1rem;
- margin-top: 2rem;
- margin-right: 2rem;
- text-align: center;
- color: #ffff;
- font-weight: 900;
- font-size: 1.8rem;
- margin-bottom: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+    color: #ffff;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
 }
 
-.companySloganText{
-  padding: 1.7rem;
-  text-align: center;
-  color: #fff;
-  background-color: #212123;
-  border-radius: 15px;
-  font-weight: 600;
-  font-size: 1.3rem;
- }
- .sloganContainer {
- 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 59vh;
- }
-
-@media screen and (min-width: 600px)  {
-  /* Estilos aquí */
-  .headerContainer{
-    flex-direction: row;
-  }
-  .sign{
-      width: 30%;
-    margin: 0;
-    justify-content: space-evenly;
- 
-  }
-  .companytextMissionContainer{
+.companySloganText {
+    padding: 1.7rem;
+    text-align: center;
+    color: #fff;
+    background-color: #212123;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.sloganContainer {
     display: flex;
-    flex-direction: column;
-    
-  }
+    justify-content: space-between;
+    align-items: center;
+    height: 59vh;
+}
 
-  .companyMain{
-    
-  /* width: 60%; */
-  height: 50vh;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
- 
-   
-    
-  }
-  .companyMain h1 { 
-    font-size: 2rem;
-    font-weight: 900;
-    margin-top: 2rem;
-    color: var(--call-to-action);
-    background-color: #ffffffd8;
-    
-    
-  }
- 
-  
-  .SignInLandingContainer{
-    
-    display: flex;
-    width: 50%;
+@media screen and (min-width: 600px) {
+    /* Estilos aquí */
+    .headerContainer {
+        flex-direction: row;
+    }
+    .sign {
+        width: 30%;
+        margin: 0;
+        justify-content: space-evenly;
+    }
+    .companytextMissionContainer {
+        display: flex;
+        flex-direction: column;
+    }
 
-    align-items: flex-start;
-    justify-content: center;
-    
-    
-  }
-  .landingMainContainer{
-    height: 70vh;
-  }
-  .companyLogo p {
-    /* width: 60%; */
-    margin-left: auto;
-    padding: 3rem;
-    font-size: 1rem;
-  }
+    .companyMain {
+        /* width: 60%; */
+        height: 50vh;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    .companyMain h1 {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-top: 2rem;
+        color: var(--call-to-action);
+        background-color: #ffffffd8;
+    }
 
+    .SignInLandingContainer {
+        display: flex;
+        width: 50%;
+
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .landingMainContainer {
+        height: 70vh;
+    }
+    .companyLogo p {
+        /* width: 60%; */
+        margin-left: auto;
+        padding: 3rem;
+        font-size: 1rem;
+    }
 }

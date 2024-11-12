@@ -1,0 +1,24 @@
+.modalMain {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px; /* Ajusta el tamaño del modal */
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+  
+  .modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el backdrop */
+    z-index: 999; /* Un nivel por debajo del modal */
+  }
+  

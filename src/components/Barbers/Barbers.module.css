@@ -1,86 +1,74 @@
-.clientMainContainer{
+.clientMainContainer {
     display: flex;
 }
 .searchButton {
     display: flex;
-  align-items: flex-start;
+    align-items: flex-start;
     background-color: transparent;
     width: 10%;
-    
 }
-.searchInput{
-
+.searchInput {
     max-width: 60%;
 }
 
-ion-icon[name=search-outline]{
+ion-icon[name='search-outline'] {
     background-color: transparent;
-    font-size : 1.5rem;
-    
+    font-size: 1.5rem;
 }
 
-ion-icon[name=search-outline]:hover{
- color: #213AD5;
-  font-size : 1.7rem;
-  
+ion-icon[name='search-outline']:hover {
+    color: #213ad5;
+    font-size: 1.7rem;
 }
 
-
-
-.findedClientsList{
-  align-items: flex-start;
-  justify-content: center;
-  gap: 1rem;
-  list-style: none;
-  
-  
+.findedClientsList {
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
 }
 
-.findedClientsList li:hover{
-  cursor: pointer;
-  
+.findedClientsList li:hover {
+    cursor: pointer;
 }
 
 .detailButton {
-  background-color: #007bff;
-  color: white;
+    background-color: #007bff;
+    color: white;
 }
 
-.deleteButton{
-  background-color: #ff0000;
-  color: white;
+.deleteButton {
+    background-color: #ff0000;
+    color: white;
 }
-.editButton{
-  background-color: #28a745;
-  color: white;
+.editButton {
+    background-color: #28a745;
+    color: white;
 }
 
-.name{
-    min-width: 120px; 
-    margin-right: 16px
-
+.name {
+    min-width: 120px;
+    margin-right: 16px;
 }
 
 /* MEDIA QUERIES */
 
-  
-  @media (min-width: 768px) { /* Medium devices */
-    .searchInput{
-  
+@media (min-width: 768px) {
+    /* Medium devices */
+    .searchInput {
         width: 60%;
     }
-    .mainSideContainer{
+    .mainSideContainer {
         background-color: red;
     }
-    
-     
-  }
-  
-  @media (min-width: 992px) { /* Large devices */
-    .searchButton{
+}
+
+@media (min-width: 992px) {
+    /* Large devices */
+    .searchButton {
         max-width: 50%;
     }
-    .findedClientsMainContainer{
-      margin-left: 7rem;
-     }
-  }
+    .findedClientsMainContainer {
+        margin-left: 7rem;
+    }
+}

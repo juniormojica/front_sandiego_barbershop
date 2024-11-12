@@ -1,24 +1,23 @@
-.default{
-  /* background-color:#ffffff ; */
-  
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
- 
+.default {
+    /* background-color:#ffffff ; */
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
 }
 
 .signInContainer {
-  background-color: #212123;
-  width: 80%;
-  height: 60vh;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  max-width: 600px;
+    background-color: #212123;
+    width: 80%;
+    height: 60vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
 }
 /* .span{
   display: block;
@@ -26,53 +25,43 @@
 } */
 
 .signInContainer h3 {
-  text-align: center;
-  padding: 1rem;
-  color: #fff;
- 
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
 }
 
 .singInForm {
-  
-  
-  display: flex;
-  flex-direction: column;
-  
-
+    display: flex;
+    flex-direction: column;
 }
-.singInInput{
-  background-color: transparent;
-  padding: 0.5rem;
-  border: 0.2px solid #484849;
-  color: #ffff;
+.singInInput {
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 0.2px solid #484849;
+    color: #ffff;
 }
 .singInForm form input:nth-of-type(1) {
-  
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .singInForm form > div:last-of-type input {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .forgetContainer p {
-  color: var(  --call-to-action);
+    color: var(--call-to-action);
 }
 
-.signInButton{
-  width: 100%;
-  
+.signInButton {
+    width: 100%;
 }
 
-
-
-.iconButton{
-  color: #ffff;
-  background-color: transparent;
+.iconButton {
+    color: #ffff;
+    background-color: transparent;
 }
 
-.passwordButton{
-  
+.passwordButton {
     position: relative;
     right: 40px;
     top: 17px;
@@ -80,28 +69,24 @@
     border: none;
     background: none;
     cursor: pointer;
-   
-  
 }
 
-.error{
-  color: #f04452;
+.error {
+    color: #f04452;
 }
 
+@media screen and (min-width: 600px) {
+    .default {
+    }
 
-@media screen and (min-width:600px){
-  .default{
-  } 
-  
-  .signInContainer{
-    width: 80%;
-    max-width: 800px;
-  }
-  .mainVariant {
-   
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    height: 100vh;
-  }
+    .signInContainer {
+        width: 80%;
+        max-width: 800px;
+    }
+    .mainVariant {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 }
