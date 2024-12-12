@@ -1,92 +1,70 @@
-.default {
-    /* background-color:#ffffff ; */
-
-    display: flex;
+.container {
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1rem;
-}
-
-.signInContainer {
-    background-color: #212123;
-    width: 80%;
-    height: 60vh;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 600px;
-}
-/* .span{
-  display: block;
-  padding: 1rem;
-} */
-
-.signInContainer h3 {
+    max-width: 510px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 1rem;
-    color: #fff;
-}
-
-.singInForm {
+    background-color: #f9f9f9;
+    margin-top:1rem
+  }
+  
+  .title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form {
     display: flex;
     flex-direction: column;
-}
-.singInInput {
-    background-color: transparent;
-    padding: 0.5rem;
-    border: 0.2px solid #484849;
-    color: #ffff;
-}
-.singInForm form input:nth-of-type(1) {
-    margin-top: 0.5rem;
-}
-
-.singInForm form > div:last-of-type input {
-    margin-bottom: 1rem;
-}
-
-.forgetContainer p {
-    color: var(--call-to-action);
-}
-
-.signInButton {
-    width: 100%;
-}
-
-.iconButton {
-    color: #ffff;
-    background-color: transparent;
-}
-
-.passwordButton {
-    position: relative;
-    right: 40px;
-    top: 17px;
-    transform: translateY(-50%);
+    gap: 15px;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
     border: none;
-    background: none;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-.error {
-    color: #f04452;
-}
-
-@media screen and (min-width: 600px) {
-    .default {
-    }
-
-    .signInContainer {
-        width: 80%;
-        max-width: 800px;
-    }
-    .mainVariant {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-}
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: var(--call-to-action-hover);
+  }
+  

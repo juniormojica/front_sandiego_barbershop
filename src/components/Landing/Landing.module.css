@@ -1,94 +1,129 @@
+/* Estilos base: Mobile first */
+.landingContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+}
+
 .headerContainer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-direction: column-reverse;
+    justify-content: center;
+  
 }
 
 .sign {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 1rem;
-    margin-bottom: 5rem;
+   
+}
+
+.companytextMissionContainer {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.companyMisionText {
+    color: #000000;
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.companySloganText {
+    margin: 1rem 0;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: #2a2a2b;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.sloganContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .SignInLandingContainer {
     display: none;
 }
-.landingContainer {
-    height: 100vh;
-}
-.companyMisionText {
-    padding: 1rem;
-    margin-top: 2rem;
-    margin-right: 2rem;
-    text-align: center;
-    color: #ffff;
-    font-weight: 900;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-}
 
-.companySloganText {
-    padding: 1.7rem;
-    text-align: center;
-    color: #fff;
-    background-color: #212123;
-    border-radius: 15px;
-    font-weight: 600;
-    font-size: 1.3rem;
-}
-.sloganContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 59vh;
-}
-
+/* Media Queries para pantallas más grandes */
 @media screen and (min-width: 600px) {
-    /* Estilos aquí */
     .headerContainer {
         flex-direction: row;
-    }
-    .sign {
-        width: 30%;
-        margin: 0;
-        justify-content: space-evenly;
-    }
-    .companytextMissionContainer {
-        display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
     }
 
-    .companyMain {
-        /* width: 60%; */
-        height: 50vh;
-        margin-left: auto;
-        display: flex;
-        align-items: center;
+    .sign {
+        justify-content: space-evenly;
+        margin-bottom: 0;
+        width: 30%;
     }
-    .companyMain h1 {
+
+    .sloganContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .companytextMissionContainer {
+        text-align: left;
+        max-width: 50%;
+    }
+
+    .companyMisionText {
         font-size: 2rem;
-        font-weight: 900;
-        margin-top: 2rem;
-        color: var(--call-to-action);
-        background-color: #ffffffd8;
+        color: black;
+       
+    }
+
+    .companySloganText {
+        font-size: 1.3rem;
+        padding: 1.5rem;
+        background-color: var(--secondary-color);
+        text-align: center;
+        color: #2a2a2b;
     }
 
     .SignInLandingContainer {
         display: flex;
-        width: 50%;
-
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-    }
-    .landingMainContainer {
-        height: 70vh;
-    }
-    .companyLogo p {
-        /* width: 60%; */
-        margin-left: auto;
-        padding: 3rem;
-        font-size: 1rem;
+        width: 50%;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    
+   
+    .headerContainer {
+        padding: 0 2rem;
+    }
+
+    img{
+       
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .companySloganText {
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+
+    .sloganContainer {
+        gap: 2rem;
+    }
+}
+

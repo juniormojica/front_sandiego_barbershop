@@ -14,7 +14,7 @@ export default function DashBoard () {
             <SideNavigation />
           </div>
           <div className={s.barberTableContainer}>
-            <BarberTable barberName='Adrian' />
+            <BarberTable barberName='Junior' />
             <BarberTable barberName='Santiago' />
             <BarberTable barberName='Miguel' />
           </div>

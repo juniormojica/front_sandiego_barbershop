@@ -19,8 +19,8 @@ body {
         sans-serif;
 }
 :root {
-    --main-bg-color: #212123;
-    --call-to-action: #213ad5;
-    --call-to-action-hover: #506ae0;
-    --button-hover: #4346dd;
+    --main-bg-color: #ffffff;
+    --call-to-action: #007bff;
+    --call-to-action-hover: rgba(40, 167, 69);
+    --secondary-color:#FAA316;
 }

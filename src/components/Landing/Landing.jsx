@@ -5,7 +5,7 @@ import SignIn from '../SignIn/SignIn'
 import s from './Landing.module.css'
 export default function Landing () {
   return (
-    <section className={`${s.landingContainer} container`}>
+    <section className={`${s.landingContainer} `}>
       <header className={s.headerContainer}>
         <div>
           <CompanyLogo />
@@ -22,10 +22,12 @@ export default function Landing () {
             <h1 className={s.companyMisionText}>
               Sistema de Gestión para Barberías
             </h1>
+            <img src='./imagen_landing.png' alt='' />
             <p className={s.companySloganText}>
               Todo lo que Necesitas para Gestionar tu Barbería en
               un Solo Lugar
             </p>
+
           </div>
 
           <div className={s.SignInLandingContainer}>

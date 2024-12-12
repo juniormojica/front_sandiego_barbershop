@@ -6,7 +6,7 @@ export default function CompanyLogo ({ margin = 0, fontColor = '' }) {
       <div className={s.logoContainer}>
         <p className={`${s.logoText} ${s[margin]} ${s[fontColor]}`}>
           {' '}
-          ControlBarberShop
+          BarberControl
         </p>
       </div>
     </Link>
