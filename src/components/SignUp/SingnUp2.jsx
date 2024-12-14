@@ -3,6 +3,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
+import CompanyLogo from '../Company/CompanyLogo'
+import GoBackBtn from '../GoBackBtn/GoBackBtn'
 
 const SignupForm = () => {
   const navigate = useNavigate()
@@ -65,6 +67,8 @@ const SignupForm = () => {
 
   return (
     <div className={s.container}>
+      <GoBackBtn path='/'>Ir al inicio</GoBackBtn>
+      <CompanyLogo />
       <h2 className={s.title}>Registro</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         {/* Email */}
@@ -107,7 +111,7 @@ const SignupForm = () => {
         </div>
 
         <button type='submit' className={s.button}>
-          Sign Up
+          Registrarse
         </button>
       </form>
     </div>

@@ -5,13 +5,15 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { validatelogin } from '../../validations/signInValidation'
 import usePasswordVisibility from '../../Hooks/usePasswordVisibility'
+import { Link, useLocation } from 'react-router-dom'
+import GoBackBtn from '../GoBackBtn/GoBackBtn'
 
 export default function SignIn () {
   const { showPassword, toogleShowPassword } = usePasswordVisibility()
   const [error, setError] = useState({ emailError: '', passwordError: '' })
   const [userInfo, setUserInfo] = useState({ email: '', password: '' })
   const [touched, setTouched] = useState({ email: false, password: false })
-
+  const location = useLocation()
   useEffect(() => {
     if (touched) {
       validatelogin(userInfo, setError, touched)
@@ -29,6 +31,8 @@ export default function SignIn () {
 
   return (
     <div className={s.container}>
+      {location.pathname !== '/' ? <GoBackBtn path='/'>Ir Al Inicio</GoBackBtn> : null}
+
       <CompanyLogo />
       <h2 className={s.title}>Iniciar Sesión</h2>
       <form className={s.form}>
@@ -78,6 +82,10 @@ export default function SignIn () {
           {error.passwordError && touched.password && (
             <span className={s.error}>{error.passwordError}</span>
           )}
+        </div>
+        <div>
+          <p>No tienes una cuenta? <Link to='/signup'>Registrate</Link></p>
+
         </div>
         <button type='submit' className={s.button}>
           Iniciar Sesión
