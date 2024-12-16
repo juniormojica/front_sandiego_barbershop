@@ -1,0 +1,24 @@
+.settingsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tabNavigation {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tabButton {
+  background-color: transparent;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.activeTab {
+  border-bottom-color: var(--call-to-action);
+  color: var(--call-to-action);
+}

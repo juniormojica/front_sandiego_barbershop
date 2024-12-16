@@ -10,6 +10,8 @@ import Barbers from './components/Barbers/Barbers.jsx'
 import SignUp2 from './components/SignUp/SingnUp2.jsx'
 import PersonalInformation from './components/PersonalInformation/PersonalInformation.jsx'
 import Footer from './components/Footer/Footer.jsx'
+import Settings from './components/Settings/Settings.jsx'
+
 function App () {
   return (
     <Router>
@@ -38,6 +40,10 @@ function App () {
         <Route
           path='/barbers'
           element={<><Barbers /></>}
+        />
+        <Route
+          path='/settings'
+          element={<><Settings /></>}
         />
       </Routes>
       {/* Footer visible en todas las páginas */}

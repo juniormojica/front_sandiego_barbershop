@@ -1,0 +1,17 @@
+.inputError {
+  border-color: #dc3545;
+}
+
+.errorMessage {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Disable button styling when submitting */
+.submitButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
