@@ -1,5 +1,4 @@
 import s from './Client.module.css'
-import SideNavigation from '../SideNavigation/SideNavigation'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
