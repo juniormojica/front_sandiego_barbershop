@@ -12,7 +12,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .mobileNavigation {
   position: fixed;
   top: 0;
@@ -38,11 +37,7 @@
   }
 
   .mobileNavigation {
-    position: static;
-    display: block;
-    width: auto;
-    height: auto;
-    background: transparent;
+    display: none;
   }
 
   .desktopNavigation {
