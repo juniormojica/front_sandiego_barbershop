@@ -1,81 +1,25 @@
-/* Estilos base para dispositivos móviles */
-
-/* Iconos más grandes y estilizados */
-ion-icon {
-    font-size: 2.5rem; /* Tamaño base para móvil */
-    color: #007bff; /* Color primario para íconos */
-    margin-right: 1rem; /* Espaciado entre ícono y texto */
-    transition: transform 0.3s ease, color 0.3s ease;
+.mainSideContainer {
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 1rem;
 }
 
-ion-icon:hover {
-    color: #0056b3; /* Color más oscuro al hacer hover */
-    transform: scale(1.2); /* Efecto de agrandamiento al hacer hover */
-}
-
-/* Contenedor principal del menú lateral */
-.sideContainer {
-    display: flex;
-    flex-direction: column; /* Alinear los elementos en columna */
-    align-items: flex-start; /* Alinear ítems al inicio */
-    padding: 1.5rem; /* Espaciado interno */
-}
-
-/* Contenedor de los ítems del menú */
-.itemContainer {
-    display: flex;
-    align-items: center;
-    padding: 1rem; /* Espaciado interno del contenedor */
-    margin-top: 0.5rem;
-    cursor: pointer;
-}
-
-/* Texto del menú */
-.textDashboard {
-    font-size: 1.8rem; /* Tamaño del texto para móvil */
-    margin-bottom: 0; /* Elimina margen extra */
-}
-
-/* Efecto hover en ítems del menú */
-.elementHover:hover {
-    background-color: #213ad5; /* Color de fondo al hacer hover */
-    color: white; /* Cambia el color del texto */
-    border-radius: 5px; /* Bordes redondeados */
-}
-
-/* Ajustes para tablets y dispositivos medianos */
-@media (min-width: 768px) {
-    ion-icon {
-        font-size: 2rem; /* Tamaño ligeramente más pequeño */
-        margin-right: 0.75rem;
-    }
-
-    .itemContainer {
-        padding: 1rem 0.5rem; /* Reduce el espaciado */
-    }
-
-    .textDashboard {
-        font-size: 1.25rem; /* Texto más pequeño */
-    }
-}
-
-/* Ajustes para dispositivos grandes */
-@media (min-width: 992px) {
+/* Responsive adjustments */
+@media (max-width: 991px) {
     .sideContainer {
-        flex-direction: row; /* Alinear en fila */
-        justify-content: space-between; /* Espaciado entre ítems */
+        flex-direction: column;
+    }
+
+    .listGroup {
+        width: 100%;
     }
 
     ion-icon {
-        font-size: 1.75rem; /* Tamaño reducido para pantallas grandes */
-        margin-right: 0.5rem;
+        font-size: 1.5rem;
     }
 
     .textDashboard {
-        font-size: 1rem; /* Texto más pequeño */
-    }
-
-    .itemContainer {
-        padding: 0.5rem; /* Menos espacio en ítems */
+        font-size: 1.2rem;
     }
 }

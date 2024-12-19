@@ -1,40 +1,69 @@
+.dashboardContainer {
+    position: relative;
+    width: 100%;
+}
+
+.menuButton {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Oculto por defecto en desktop */
+}
+
+.menuButton ion-icon {
+    font-size: 2rem;
+    color: #007bff;
+}
+
 .registerMainContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
-    justify-content: center;
-    
+    position: relative;
 }
+
+.sidebarWrapper {
+    width: 250px; /* Ancho fijo para desktop */
+    background: white;
+}
+
 .barberTableContainer {
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-}
-.sidebarMainContainer {
-    width: 100%;
-    height: 100%;
+    gap: 1rem;
 }
 
-@media (min-width: 768px) {
-    /* Medium devices */
-    .sidebarMainContainer {
-        width: 40%;
+/* Mobile & Tablet styles */
+@media (max-width: 991px) {
+    .menuButton {
+        display: block; /* Mostrar botón hamburguesa */
+    }
+
+    .sidebarWrapper {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Oculto por defecto */
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 999;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menuOpen {
+        left: 0; /* Mostrar menú cuando está abierto */
     }
 
     .registerMainContainer {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
+        flex-direction: column;
     }
-}
 
-@media (min-width: 992px) {
-    /* Large devices */
-    .sidebarMainContainer {
-        width: 20%;
-    }
-    .registerMainContainer {
-        grid-template-columns: 1fr;
+    .barberTableContainer {
+        width: 100%;
+        padding: 1rem;
     }
 }

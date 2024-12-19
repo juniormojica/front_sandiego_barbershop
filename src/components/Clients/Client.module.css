@@ -1,57 +1,73 @@
+.clientPageContainer {
+    position: relative;
+    width: 100%;
+}
+
+.menuButton {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Oculto por defecto en desktop */
+}
+
+.menuButton ion-icon {
+    font-size: 2rem;
+    color: #007bff;
+}
+
 .clientMainContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1280px;
- 
-  
+    gap: 2rem;
+    position: relative;
 }
 
-.clientsMainContainer {
-    align-items: center;
-    justify-content: space-around;
-}
-/* .findedClientsMainContainer{
- margin-left: 2rem;
-} */
-
-.findedClientsList {
-    justify-content: center;
-    gap: 1rem;
-    list-style: none;
+.sidebarWrapper {
+    width: 250px; /* Ancho fijo para desktop */
+    background: white;
+    height: 100%;
 }
 
-.findedClientsList li:hover {
-    cursor: pointer;
+.contentSection {
+    flex: 1;
+    padding: 1rem;
 }
 
-.editButton {
-    background-color: #28a745;
-    color: white;
+.findedClientsMainContainer {
+    width: 100%;
 }
 
-/* MEDIA QUERIES */
-
-@media (min-width: 768px) {
-    /* Medium devices */
-    .searchInput {
-        width: 60%;
+/* Mobile & Tablet styles */
+@media (max-width: 991px) {
+    .menuButton {
+        display: block; /* Mostrar botón hamburguesa */
     }
-    .mainSideContainer {
-        background-color: red;
+
+    .sidebarWrapper {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Oculto por defecto */
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 999;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        background: white;
     }
-    .clientsMainContainer {
-        justify-content: space-around;
-        align-items: center;
+
+    .menuOpen {
+        left: 0; /* Mostrar menú cuando está abierto */
+    }
+
+    .clientMainContainer {
+        flex-direction: column;
+    }
+
+    .contentSection {
+        width: 100%;
     }
 }
 
-@media (min-width: 992px) {
-    /* Large devices */
-    .searchButton {
-        max-width: 50%;
-    }
-    /*  .findedClientsMainContainer{
-      margin-left: 7rem;
-     } */
-}
+/* Mantén tus otros estilos existentes */

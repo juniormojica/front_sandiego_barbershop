@@ -1,7 +1,7 @@
 import s from './Client.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-
+import { useEffect, useState } from 'react' // Añade useState
+import SideNavigation from '../SideNavigation/SideNavigation' // Importa SideNavigation
 import { fetchClients } from '../../features/clients/clientsSlice'
 import ClientItem from './ClientItem'
 import SearchBar from '../searchBar/SearchBar'
@@ -11,14 +11,13 @@ import CreateClientModal from './CreateClientModal'
 
 export default function Client () {
   const dispatch = useDispatch()
+  const [isMenuOpen, setIsMenuOpen] = useState(false) // Añade estado para el menú
 
   const {
     data: clients,
     status,
     error
   } = useSelector((state) => state.clients)
-
-  console.log(clients)
 
   useEffect(() => {
     if (status === 'idle') {
@@ -35,10 +34,16 @@ export default function Client () {
   }
 
   return (
-    <>
-      <div
-        className={`d-flex w-100 flex-md-row justify-center ${s.clientsMainContainer}`}
+    <div className={s.clientPageContainer}>
+      {/* Botón hamburguesa para móvil/tablet */}
+      <button
+        className={s.menuButton}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
+        <ion-icon name={isMenuOpen ? 'close-outline' : 'menu-outline'} />
+      </button>
+
+      <div className={`d-flex w-100 flex-md-row justify-center ${s.clientsMainContainer}`}>
         <div>
           <h3 className='m-4'>Clients</h3>
         </div>
@@ -46,24 +51,18 @@ export default function Client () {
           <CreateClientModal />
         </div>
       </div>
-      <section
-        className={`container ${s.clientMainContainer} d-flex flex-column flex-md-row`}
-      >
-        {/* BARRA DE NAVEGACION LATERAL  */}
-        <div
-          className={` ${s.sideNavContainer} shadow p-3 mb-5 bg-body-tertiary rounded`}
-        />
-        <section>
-          {/* BARRA DE BUSQUEDA Y BOTON DE BUSQUEDA */}
+
+      <section className={`container ${s.clientMainContainer} d-flex flex-column flex-md-row`}>
+        {/* Navegación lateral */}
+        <div className={`${s.sidebarWrapper} ${isMenuOpen ? s.menuOpen : ''}`}>
+          <SideNavigation />
+        </div>
+
+        <section className={s.contentSection}>
           <SearchBar />
-          {/* LISTA DE CLIENTES */}
-          <section
-            className={`${s.findedClientsMainContainer} mt-3 mr-3`}
-          >
-            <div className={`${s.findedClientContainer} `}>
-              <ul
-                className={`d-flex flex-column ${s.findedClientsList}`}
-              >
+          <section className={`${s.findedClientsMainContainer} mt-3 mr-3`}>
+            <div className={`${s.findedClientContainer}`}>
+              <ul className={`d-flex flex-column ${s.findedClientsList}`}>
                 {clients.map((client) => (
                   <ClientItem
                     key={client.idClient}
@@ -77,6 +76,6 @@ export default function Client () {
           </section>
         </section>
       </section>
-    </>
+    </div>
   )
 }

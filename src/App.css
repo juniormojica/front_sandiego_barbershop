@@ -1,49 +1,45 @@
 .appContainer {
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
 }
 
-.mobileNavigation {
-  display: block;
-}
-
-.desktopNavigation {
-  display: none;
-}
-
-.mainContent {
+.mainWrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  overflow-x: hidden;
 }
 
 .contentWrapper {
-  display: flex;
+  flex: 1;
+  padding: 20px;
 }
 
-.routesContent {
-  flex-grow: 1;
+/* Adjust side navigation width */
+.desktopNavigation {
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-right: 1px solid #eaeaea;
 }
 
-/* Media query para pantallas de escritorio */
-@media (min-width: 768px) {
+/* Mobile styles */
+@media (max-width: 767px) {
   .appContainer {
-    flex-direction: row;
-  }
-
-  .mobileNavigation {
-    display: none;
+    flex-direction: column;
   }
 
   .desktopNavigation {
-    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
   }
 
-  .desktopNavigation.visible {
-    width: 250px; /* Ajusta el ancho según necesites */
-  }
-
-  .desktopNavigation.hidden {
-    width: 0;
+  .mainWrapper {
+    width: 100%;
   }
 }
