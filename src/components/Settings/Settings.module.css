@@ -1,3 +1,48 @@
+.pageContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mainContainer {
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* Menu button styles */
+.menuButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
+
+.menuButton ion-icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+/* Sidebar styles */
+.sidebarWrapper {
+  width: 250px;
+  background: white;
+  min-height: 100vh;
+  transition: transform 0.3s ease;
+}
+
+/* Content section styles */
+.contentSection {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Existing settings styles */
 .settingsContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,4 +66,47 @@
 .activeTab {
   border-bottom-color: var(--call-to-action);
   color: var(--call-to-action);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .menuButton {
+    display: block;
+  }
+
+  .mainContainer {
+    position: relative;
+  }
+
+  .sidebarWrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+  }
+
+  .menuOpen {
+    left: 0;
+  }
+
+  .contentSection {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .settingsContainer {
+    padding: 10px;
+  }
+
+  .tabNavigation {
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .tabButton {
+    white-space: nowrap;
+  }
 }

@@ -1,58 +1,120 @@
+.pageContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mainContainer {
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* Estilos del botón de menú */
+.menuButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
+
+.menuButton ion-icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+/* Estilos del sidebar */
+.sidebarWrapper {
+  width: 250px;
+  background: white;
+  min-height: 100vh;
+  transition: transform 0.3s ease;
+}
+
+/* Estilos de la sección de contenido */
+.contentSection {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Estilos de las tarjetas */
+.barberCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .actions {
   display: flex;
   gap: 0.5rem;
-  align-items: center; /* Asegura que los botones estén alineados verticalmente */
 }
 
-.detailButton,
-.deleteButton {
-  width: 60px;
-  height: 40px;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 14px;
-  flex-shrink: 0; /* Evita que los botones se reduzcan de tamaño */
+/* Estilos responsive */
+@media (max-width: 991px) {
+  .menuButton {
+      display: block;
+  }
+
+  .mainContainer {
+      position: relative;
+  }
+
+  .sidebarWrapper {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      z-index: 1000;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      transition: left 0.3s ease;
+  }
+
+  .menuOpen {
+      left: 0;
+  }
+
+  .contentSection {
+      width: 100%;
+      margin-left: 0;
+  }
 }
 
+/* Mantén los demás estilos que ya tenías */
 .detailButton {
   background-color: #007bff;
   color: white;
-}
-
-.detailButton:hover {
-  background-color: #0056b3;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .deleteButton {
-  background-color: #ff0000;
+  background-color: #dc3545;
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.deleteButton:hover {
-  background-color: #cc0000;
-}
-.name {
+.findedClientsList {
   list-style: none;
-}
-.findedClientsList{
-  padding-left: 0;
+  padding: 0;
 }
 
-/* RESPONSIVE DESIGN */
-@media (min-width: 768px) {
-  .barberCard {
-    padding: 0.75rem 1.5rem;
-  }
-  .detailButton,
-  .deleteButton {
-    width: 120px;
-    height: 45px;
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 992px) {
-  .findedClientsMainContainer {
-    margin-left: 7rem;
-  }
+.name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
