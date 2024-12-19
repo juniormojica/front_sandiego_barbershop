@@ -27,7 +27,6 @@
 
 /* Media query para pantallas de escritorio */
 @media (min-width: 768px) {
-  
   .appContainer {
     flex-direction: row;
   }
@@ -38,6 +37,13 @@
 
   .desktopNavigation {
     display: block;
+  }
+
+  .desktopNavigation.visible {
     width: 250px; /* Ajusta el ancho según necesites */
+  }
+
+  .desktopNavigation.hidden {
+    width: 0;
   }
 }

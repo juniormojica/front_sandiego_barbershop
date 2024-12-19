@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-
 import Landing from './components/Landing/Landing.jsx'
 import SignIn from './components/SignIn/SignIn.jsx'
 import DashBoard from './components/DashBoard/DashBoard.jsx'
