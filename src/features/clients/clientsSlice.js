@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 export const fetchClients = createAsyncThunk(
   'clients/fetchClients',
   async () => {
-    const response = await axios.get('http://localhost:3000/clients')
+    const response = await axios.get(`${BASE_URL}/clients`)
     return response.data.data // devuelve los datos que se manejarán en el slice
   }
 )
@@ -13,7 +14,7 @@ export const createClient = createAsyncThunk(
   'clients/createClient',
   async (newClient) => {
     const response = await axios.post(
-      'http://localhost:3000/clients',
+      `${BASE_URL}/clients`,
       newClient
     )
     return response.data.data // Asumiendo que el API devuelve el cliente creado
@@ -23,7 +24,7 @@ export const createClient = createAsyncThunk(
 export const deleteClient = createAsyncThunk(
   'clients/deleteClient',
   async (clientId) => {
-    await axios.delete(`http://localhost:3000/clients/${clientId}`)
+    await axios.delete(`${BASE_URL}/clients/${clientId}`)
     return clientId // Devuelve el ID del cliente eliminado
   }
 )
@@ -34,7 +35,7 @@ export const updateClient = createAsyncThunk(
     console.log(idClient, name, phone)
 
     const response = await axios.patch(
-            `http://localhost:3000/clients/${idClient}`,
+            `${BASE_URL}/clients/${idClient}`,
             { name, phone }
     )
 

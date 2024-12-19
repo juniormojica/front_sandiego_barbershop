@@ -53,9 +53,7 @@ export default function Client () {
         {/* BARRA DE NAVEGACION LATERAL  */}
         <div
           className={` ${s.sideNavContainer} shadow p-3 mb-5 bg-body-tertiary rounded`}
-        >
-          <SideNavigation />
-        </div>
+        />
         <section>
           {/* BARRA DE BUSQUEDA Y BOTON DE BUSQUEDA */}
           <SearchBar />

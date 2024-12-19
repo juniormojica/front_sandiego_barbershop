@@ -3,13 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import styles from './ServiceManagement.module.css'
 import ServiceList from '../ServiceList/ServiceList'
 import ServiceForm from '../ServiceForm/ServiceForm'
-import {
-  fetchServices,
-  addService,
-  updateService,
-  deleteService,
-  setSelectedService
-} from '../../features/services/serviceSlices'
+import { fetchServices, addService, updateService, deleteService, setSelectedService } from '../../features/services/serviceSlice'
 
 const ServiceManagement = () => {
   const dispatch = useDispatch()

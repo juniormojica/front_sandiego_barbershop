@@ -1,4 +1,43 @@
-.container {
-    height: 100%; /* Ensure body takes full viewport height */
-    width: 100%; /* Ensure body takes full viewport width */
+.appContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavigation {
+  display: block;
+}
+
+.desktopNavigation {
+  display: none;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.contentWrapper {
+  display: flex;
+}
+
+.routesContent {
+  flex-grow: 1;
+}
+
+/* Media query para pantallas de escritorio */
+@media (min-width: 768px) {
+  
+  .appContainer {
+    flex-direction: row;
+  }
+
+  .mobileNavigation {
+    display: none;
+  }
+
+  .desktopNavigation {
+    display: block;
+    width: 250px; /* Ajusta el ancho según necesites */
+  }
 }

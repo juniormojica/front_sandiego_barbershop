@@ -41,6 +41,7 @@ export default function SideNavigation () {
             <div
               className={`d-flex align-items-center list-group-item-action p-2 ${s.elementHover}`}
             >
+
               <ion-icon name='happy-outline' />
               <li className='list-group-item text-center p-2 '>
                 <Link
@@ -84,7 +85,7 @@ export default function SideNavigation () {
               <li className='list-group-item text-center p-2 '>
                 <Link
                   className='list-group-item-action text-decoration-none'
-                  to='/dashboard'
+                  to='/settings'
                 >
                   Settings
                 </Link>

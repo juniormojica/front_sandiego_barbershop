@@ -56,6 +56,13 @@
 
 /* Media Queries para pantallas más grandes */
 @media screen and (min-width: 600px) {
+    .sign{
+        width: 30%;
+    }
+    .desktopNavigation {
+        display: none; 
+         width: 0;
+    }
     .headerContainer {
         flex-direction: row;
         justify-content: space-between;
@@ -105,7 +112,10 @@
 }
 
 @media screen and (min-width: 1024px) {
-    
+    .desktopNavigation {
+        display: none; 
+         width: 0;
+    }
    
     .headerContainer {
         padding: 0 2rem;
