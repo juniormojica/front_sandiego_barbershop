@@ -1,5 +1,5 @@
-import '../../App.jsx'
-import { Routes, Route } from 'react-router-dom'
+import { useLocation, Routes, Route } from 'react-router-dom'
+
 import Landing from '../Landing/Landing.jsx'
 import ConditionalCompanyLogo from '../ConditionalCompanyLogo/ConditionalCompanyLogo.jsx'
 import SignIn from '../SignIn/SignIn.jsx'
@@ -10,14 +10,18 @@ import BarbersManagement from '../BarbersManagement/BarbersManagement.jsx'
 import PersonalInformation from '../PersonalInformation/PersonalInformation.jsx'
 import Settings from '../Settings/Settings.jsx'
 import Footer from '../Footer/Footer.jsx'
+import Navbar from '../NavBar/NavBar.jsx'
+
 function AppContent () {
+  const location = useLocation()
+  const showNavbar = location.pathname !== '/'
+
   return (
     <div className='appContainer'>
-
+      {showNavbar && <Navbar />}
       <div className='mainWrapper'>
         <ConditionalCompanyLogo />
         <div className='contentWrapper'>
-
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/signin' element={<SignIn />} />

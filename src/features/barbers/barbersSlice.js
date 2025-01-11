@@ -61,7 +61,7 @@ export const deleteBarber = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const response = await fetch(`${BASE_URL}/barbers/${id}`, {
-        method: 'DELETE'
+        method: 'PATCH'
       })
 
       if (!response.ok) {
@@ -71,6 +71,29 @@ export const deleteBarber = createAsyncThunk(
       // Refetch barbers after successful deletion
       dispatch(fetchBarbers())
       return id
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
+export const toggleBarberState = createAsyncThunk(
+  'barbers/toggleBarberState',
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`${BASE_URL}/barbers/${id}/toggle`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+
+      if (!response.ok) {
+        throw new Error('Error al cambiar el estado del barbero')
+      }
+
+      const data = await response.json()
+      return { id, message: data.message }
     } catch (error) {
       return rejectWithValue(error.message)
     }
@@ -125,6 +148,12 @@ const barbersSlice = createSlice({
     builder.addCase(deleteBarber.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.payload || 'Failed to delete barber'
+    })
+    builder.addCase(toggleBarberState.fulfilled, (state, action) => {
+      const barber = state.barbers.find((b) => b.idBarber === action.payload.id)
+      if (barber) {
+        barber.state = barber.state === 'active' ? 'inactive' : 'active'
+      }
     })
   }
 })

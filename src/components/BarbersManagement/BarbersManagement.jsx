@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchBarbers, addBarber, deleteBarber } from '../../features/barbers/barbersSlice'
+import { fetchBarbers, addBarber, deleteBarber, toggleBarberState } from '../../features/barbers/barbersSlice'
 import CreateBarber from '../CreateBarber/CreateBarber'
 import Barbers from '../Barbers/Barbers'
 import Swal from 'sweetalert2'
@@ -48,13 +48,19 @@ const BarbersManagement = () => {
   // Delete a barber
   const handleDeleteBarber = async (id) => {
     try {
-      await dispatch(deleteBarber(id)).unwrap()
+      const result = await dispatch(deleteBarber(id)).unwrap()
+
+      Swal.fire({
+        icon: 'success',
+        title: '¡Barbero desactivado!',
+        text: result.message
+      })
     } catch (error) {
-      console.error('Failed to delete barber:', error)
+      console.error('Fallo al deactivar barbero:', error)
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'No se pudo Eliminar el barbero. Intenta nuevamente.'
+        text: 'No se pudo desactivar el barbero. Intenta nuevamente.'
       })
     }
   }
@@ -89,9 +95,28 @@ const BarbersManagement = () => {
     }
   }
 
+  const handleToggleBarberState = async (id) => {
+    try {
+      const result = await dispatch(toggleBarberState(id)).unwrap()
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Estado cambiado',
+        text: result.message
+      })
+    } catch (error) {
+      console.error('Failed to toggle barber state:', error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo cambiar el estado del barbero. Intenta nuevamente.'
+      })
+    }
+  }
+
   // Filter barbers by search term
   const filteredBarbers = barbers.filter((barber) =>
-    barber.name.toLowerCase().includes(searchTerm.toLowerCase())
+    barber.state === 'active' && barber.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
@@ -134,9 +159,7 @@ const BarbersManagement = () => {
       {!isLoading && (
         <Barbers
           barbers={filteredBarbers}
-          isLoading={isLoading}
-          error={error}
-          onDelete={handleDeleteBarber}
+          onToggleState={handleToggleBarberState}
         />
       )}
     </div>
