@@ -33,7 +33,6 @@ export default function SignIn () {
     <div className={s.container}>
       {location.pathname !== '/' ? <GoBackBtn path='/'>Ir Al Inicio</GoBackBtn> : null}
 
-      <CompanyLogo />
       <h2 className={s.title}>Iniciar Sesión</h2>
       <form className={s.form}>
         <div className={s.field}>

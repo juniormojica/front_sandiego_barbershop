@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import { Menu, X } from 'lucide-react'
 
@@ -23,7 +23,8 @@ const Navbar = () => {
       <div className={styles.navContainer}>
         <div className={styles.logoContainer}>
           {/* Aquí puedes agregar tu logo */}
-          <span className={styles.logoText}>BarberApp</span>
+          <Link to='/'> <span className={styles.logoText}>BarberApp</span></Link>
+
         </div>
 
         <button className={styles.menuButton} onClick={toggleMenu}>
